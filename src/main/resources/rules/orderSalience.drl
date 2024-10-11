@@ -1,0 +1,28 @@
+//订单积分规则
+package com.stormling.order
+
+
+
+rule "rule1"
+    salience 9
+    when
+        eval(true)
+    then
+        System.out.println("规则rule1");
+end
+
+rule "rule2"
+    salience 8
+    when
+        eval(true)
+    then
+        System.out.println("规则rule2");
+ end
+
+rule "rule3"
+    salience 10
+    when
+        eval(true)
+    then
+        System.out.println("规则rule3");
+end

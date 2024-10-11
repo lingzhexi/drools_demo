@@ -1,0 +1,16 @@
+//订单积分规则
+package com.stormling.order
+import com.stormling.drools_demo.model.Order
+
+//rule1:<100 no
+rule "order_rule_1"
+    no-loop
+    when
+        $order:Order(amount<100)
+    then
+        $order.setScore(0);
+        $order.setAmount(80);
+        update($order)
+        System.out.println("匹配规则1：不加分");
+end
+

@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class DroolsConfig   {
     private static final KieServices kieServices = KieServices.Factory.get();
     //制定规则文件的路径
-    private static final String RULES_CUSTOMER_RULES_DRL = "rules/order.drl";
+    private static final String RULES_CUSTOMER_RULES_DRL = "rules/orderIntegral.drl";
 
     @Bean
     public KieContainer kieContainer() {

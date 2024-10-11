@@ -1,0 +1,15 @@
+//订单积分规则
+package com.stormling.order;
+import com.stormling.drools_demo.model.Order;
+
+global com.stormling.drools_demo.model.Integral integral;
+
+rule "order_rule_1"
+    no-loop
+    when
+        $order:Order(amount<100)
+    then
+        integral.setScore(80);
+        update($order)
+        System.out.println("匹配规则1：不加分");
+end

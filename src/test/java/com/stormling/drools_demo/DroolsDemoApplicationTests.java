@@ -1,5 +1,6 @@
 package com.stormling.drools_demo;
 
+import com.stormling.drools_demo.model.Integral;
 import com.stormling.drools_demo.model.Order;
 import org.junit.jupiter.api.Test;
 import org.kie.api.runtime.KieContainer;
@@ -20,7 +21,11 @@ class DroolsDemoApplicationTests {
 
         // Fact 事实对象 Order
         Order order = new Order();
-        order.setAmount(1300);
+        order.setAmount(80);
+
+        // 设置全局配置 使用orderIntegral.drl 时使用
+        Integral integral = new Integral();
+        kieSession.setGlobal("integral",integral);
 
         // 将Order对象数据插入工作内存中
         kieSession.insert(order);
